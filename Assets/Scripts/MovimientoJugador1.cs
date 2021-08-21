@@ -68,7 +68,7 @@ public class MovimientoJugador1 : MonoBehaviour
 
 
         //Movement code for left and right arrow keys.
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
 
@@ -81,7 +81,7 @@ public class MovimientoJugador1 : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(+speed, rb.velocity.y);
             //delete this if it doesn't work, take out the If when you have a player sprite

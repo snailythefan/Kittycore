@@ -6,12 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class CambiaEscenas : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transTime = 1f;
+
     
     // Update is called once per frame
-    public void LoadScene(string sceneName )
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene(sceneName);
-        Debug.Log("RestartGame");
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        
+    }
+
+    IEnumerator LoadLevel (int levelIndex)
+    {
+        //play animation
+        transition.SetTrigger("Start"); //this activates our animation trigger called "Start"
+
+        //wait
+        yield return new WaitForSeconds(transTime);
+
+        //loadScene
+        SceneManager.LoadScene(levelIndex);
+        Debug.Log("GameStart");
     }
             
 }

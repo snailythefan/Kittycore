@@ -21,12 +21,12 @@ public class Pua : MonoBehaviour
     {
     	if (other.gameObject.tag != "Player")
     	{
-    		Enemy enemy = other.GetComponent<Enemy>();
+    		//Enemy enemy = other.GetComponent<Enemy>();
 
-    		if(enemy != null)
-    		{
-    			enemy.TakeDamage(30);
-    		}
+    		//if(enemy != null)
+    		//{
+    		//	enemy.TakeDamage(30);
+    		//}
 
     		Destroy(gameObject);
     		Debug.Log("destroyed!");

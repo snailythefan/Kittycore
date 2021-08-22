@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour {
 	bool isInmune;
 	public float inmunityTime;
 
+	public GameObject pantallaLose;
+	public GameObject mitti;
+	public GameObject Bgmusic;
+
 	void Start(){
 		health = maxHealth;
 	}
@@ -27,7 +31,10 @@ public class PlayerHealth : MonoBehaviour {
 			if (health <= 0) {
 
 				//aparecer pantalla de game over
-				print ("player dead");
+				pantallaLose.SetActive(true);
+				Destroy(mitti);
+				Destroy(Bgmusic);
+				Debug.Log("Lose");
 			}
 		}
 

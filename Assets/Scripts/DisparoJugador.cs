@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class DisparoJugador : MonoBehaviour {
 
-	[SerializeField] private Transform controladorDisparo;
-
-	[SerializeField] private GameObject bala;
+	public Transform firePoint;
+	public GameObject bala;
 
 	private void Update(){
 		if(Input.GetButtonDown("Fire1")){
-			//Disparar
-			Disparar();
-		}
-	}
 
-	private void Disparar () {
-		Instantiate (bala, controladorDisparo.position, controladorDisparo.rotation);
+			Instantiate (bala, firePoint.position, firePoint.rotation);
+		
+		}
+			
 	}
+		
 }

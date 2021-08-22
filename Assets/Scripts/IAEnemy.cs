@@ -30,9 +30,13 @@ public class IAEnemy : MonoBehaviour {
 	}
 
 	void PerseguirJugador() {
-		if (transform.position.x < player.position.x) {
+		
+		if (transform.position.x < player.position.x)
+		{
 			rb2d.velocity = new Vector2 (velocidadMov, 0f);
-		} else if (transform.position.x < player.position.x) {
+		}
+		else if (transform.position.x > player.position.x)
+		{
 			rb2d.velocity = new Vector2 (-velocidadMov, 0f);
 		}
 	}

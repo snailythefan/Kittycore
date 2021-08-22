@@ -11,5 +11,17 @@ public class Enemy : MonoBehaviour {
 	public float knockbackForceY;
 	public float damageToGive;
 
+	public GameObject efectoMuerte;
 
+	public void GetDamage(float damage){
+		healthPoints -= damage;
+		if (healthPoints <= 0) {
+			Muerte ();
+		}
+	}
+
+	private void Muerte(){
+		Instantiate (efectoMuerte, transform.position, Quaternion.identity);
+		Destroy (gameObject);
+	}
 }

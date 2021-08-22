@@ -10,10 +10,13 @@ public class CambiaEscenas : MonoBehaviour
 
     public float transTime = 1f;
 
+    public AudioSource click;
+
     
     // Update is called once per frame
     public void LoadNextLevel()
     {
+        click.Play();
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         
     }

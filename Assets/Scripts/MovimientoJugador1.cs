@@ -59,7 +59,7 @@ public class MovimientoJugador1 : MonoBehaviour
             //delete this if it doesn't work
             //if (playerAnimator != null)
             //{
-            	playerAnimator.SetTrigger("jump");
+            	//playerAnimator.SetTrigger("jump");
             //}
 
             SFXJump.Play();
@@ -73,24 +73,35 @@ public class MovimientoJugador1 : MonoBehaviour
             rb.velocity = new Vector2(-speed, rb.velocity.y);
 
             //delete this if it doesn't work, take out the If when you have a player sprite
-            if(playerSprite != null)
-            {
+            //if(playerSprite != null)
+            //{
             	playerSprite.flipX = true;
             	
             	
-            }
+            //}
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(+speed, rb.velocity.y);
             //delete this if it doesn't work, take out the If when you have a player sprite
-            if(playerSprite != null)
-            {
+            //if(playerSprite != null)
+            //{
             	playerSprite.flipX = false;
             	
             	
-            }
+            //}
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rb.velocity = new Vector2(0, 0);
+            //delete this if it doesn't work, take out the If when you have a player sprite
+            //if(playerSprite != null)
+            //{
+                playerAnimator.SetTrigger("down");
+                
+                
+            //}
         }
         //ELSE if we're not pressing an arrow key, our velocity is 0 along the X axis, and whatever the Y velocity is (determined by jump)
         else
